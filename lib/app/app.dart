@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   }
 
   ThemeData _getTheme() {
-    final ColorScheme colorScheme = ColorScheme.fromSeed(seedColor: Colors.green);
+    final ColorScheme colorScheme = ColorScheme.fromSeed(seedColor: Colors.blueAccent);
     return ThemeData(
       colorScheme: colorScheme,
       useMaterial3: true,
