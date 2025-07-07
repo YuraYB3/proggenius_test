@@ -27,18 +27,13 @@ class _WebViewScreenState extends State<WebViewScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsetsDirectional.only(
-        top: 10,
-      ),
-      child: WebViewWidget(
-        controller: _webViewController,
-        gestureRecognizers: {
-          Factory<VerticalDragGestureRecognizer>(
-            () => VerticalDragGestureRecognizer(),
-          )
-        },
-      ),
+    return WebViewWidget(
+      controller: _webViewController,
+      gestureRecognizers: {
+        Factory<VerticalDragGestureRecognizer>(
+          () => VerticalDragGestureRecognizer(),
+        )
+      },
     );
   }
 }

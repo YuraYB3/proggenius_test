@@ -28,7 +28,7 @@ class _BodyContent extends StatelessWidget {
           Icon(
             Icons.arrow_downward,
             size: 120,
-            color: colorScheme.primaryFixedDim,
+            color: colorScheme.primary,
           ),
           ElevatedButton(
             onPressed: onOpenLinkPressed,

@@ -32,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void _showWebViewBottomSheet(BuildContext context) {
     final String url = 'https://pub.dev/';
     showModalBottomSheet(
+      backgroundColor: Colors.white,
       context: context,
       isScrollControlled: true,
       builder: (_) => MainBottomSheetFactory.build(

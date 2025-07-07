@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+part of '../main_bottom_sheet_screen.dart';
 
-class BottomSheetNotch extends StatelessWidget {
-  const BottomSheetNotch({
+class _Notch extends StatelessWidget {
+  const _Notch({
     this.notchWidth = 36,
     this.notchHeight = 4,
     super.key,
@@ -17,7 +17,6 @@ class BottomSheetNotch extends StatelessWidget {
 
     return Center(
       child: Container(
-        margin: const EdgeInsetsDirectional.only(top: 8),
         width: notchWidth,
         height: notchHeight,
         decoration: BoxDecoration(

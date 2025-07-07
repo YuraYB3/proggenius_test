@@ -27,7 +27,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   Color _getBackgroundColor(ColorScheme colorScheme) =>
-      backgroundColor ?? colorScheme.inversePrimary;
+      backgroundColor ?? colorScheme.primary;
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
