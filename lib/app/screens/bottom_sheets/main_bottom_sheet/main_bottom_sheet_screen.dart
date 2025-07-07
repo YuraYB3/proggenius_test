@@ -8,6 +8,8 @@ part 'widgets/_action_button.dart';
 part 'widgets/_notch.dart';
 
 const double _initialSize = 0.5;
+const double _maxChildSize = 0.95;
+const double _minChildSize = 0;
 
 class MainBottomSheetScreen extends StatefulWidget {
   const MainBottomSheetScreen({
@@ -38,7 +40,7 @@ class _WebViewScreenState extends State<MainBottomSheetScreen> {
     _currentSizeNotifier.value = _draggableController.size;
   }
 
-  void _collapse() => _animateSheet(_getSheet.snapSizes!.first);
+  void _collapse() => _animateSheet(_getSheet.snapSizes?.first ?? _initialSize);
 
   void _close() => Navigator.of(context).maybePop();
 
@@ -77,9 +79,9 @@ class _WebViewScreenState extends State<MainBottomSheetScreen> {
 
         return DraggableScrollableSheet(
           key: _sheetKey,
-          maxChildSize: 0.95,
+          maxChildSize: _maxChildSize,
           expand: false,
-          minChildSize: 0,
+          minChildSize: _minChildSize,
           initialChildSize: _initialSize,
           snap: true,
           snapSizes: snapSizes,
@@ -125,8 +127,8 @@ class _WebViewScreenState extends State<MainBottomSheetScreen> {
       (_sheetKey.currentWidget as DraggableScrollableSheet);
 
   List<double> _getSnapSizes(BoxConstraints constraints) => [
-        56 / constraints.maxHeight,
-        0.5,
+        kToolbarHeight / constraints.maxHeight,
+        _initialSize,
       ];
 
   void _onIconPressed() {

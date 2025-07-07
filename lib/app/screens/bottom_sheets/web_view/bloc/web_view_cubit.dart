@@ -19,4 +19,10 @@ class WebViewCubit extends Cubit<WebViewState> {
 
   WebViewController createWebViewController() =>
       _iWebViewHandler.createController(url: _url);
+
+  void updateLoadingStatus({required bool isLoading}) {
+    if (isLoading == state.isPageLoading) return;
+
+    emit(state.copyWith(isPageLoading: isLoading));
+  }
 }

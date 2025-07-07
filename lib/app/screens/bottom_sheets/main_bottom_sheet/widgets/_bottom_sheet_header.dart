@@ -19,31 +19,29 @@ class _BottomSheetHeaderDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   Widget build(BuildContext context, _, __) {
-    return Flexible(
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: const EdgeInsetsDirectional.only(
-                start: 10,
-              ),
-              child: _ActionButton(
-                iconNotifier: iconNotifier,
-                onIconPressed: onIconPressed,
-                collapsedThreshold: collapsedThreshold,
-              ),
-            ),
-          ),
-          Padding(
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Padding(
             padding: const EdgeInsetsDirectional.only(
-              top: 20,
+              start: 10,
             ),
-            child: const _Notch(),
+            child: _ActionButton(
+              iconNotifier: iconNotifier,
+              onIconPressed: onIconPressed,
+              collapsedThreshold: collapsedThreshold,
+            ),
           ),
-        ],
-      ),
+        ),
+        Padding(
+          padding: const EdgeInsetsDirectional.only(
+            top: 20,
+          ),
+          child: const _Notch(),
+        ),
+      ],
     );
   }
 
