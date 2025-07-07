@@ -21,11 +21,11 @@ class _ActionButton extends StatelessWidget {
     return ValueListenableBuilder<double>(
       valueListenable: iconNotifier,
       builder: (_, currentSize, __) {
-        final bool showCollapseIcon = _isCollapsed(currentSize);
+        final IconData icon = _getIcon(_isCollapsed(currentSize));
 
         return IconButton(
           icon: Icon(
-            showCollapseIcon ? Icons.keyboard_arrow_down : Icons.close,
+            icon,
             color: colorScheme.primary,
             size: 32,
           ),
@@ -37,4 +37,7 @@ class _ActionButton extends StatelessWidget {
 
   bool _isCollapsed(double currentSize) =>
       currentSize > (collapsedThreshold + _kEpsilon);
+
+  IconData _getIcon(bool isCollapsed) =>
+      isCollapsed ? Icons.keyboard_arrow_down : Icons.close;
 }
